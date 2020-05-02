@@ -1,7 +1,7 @@
 [
   {
     "Title": "Star Wars: Episode I - The Phantom Menace",
-    "Year Released": "1999",
+    "ReleasedYear": "1999",
     "Genre": "Action",
     "ActorNameA": "Ewan McGregor",
     "ActorCharA": "Obi-wan Kenobi",
@@ -12,7 +12,7 @@
   },
   {
     "Title": "Star Wars: Episode IV - A New Hope",
-    "Year Released": "1977",
+    "ReleasedYear": "1977",
     "Genre": "Action",
     "ActorNameA": "Mark Hamill",
     "ActorCharA": "Luke Skywalker",
@@ -23,7 +23,7 @@
   },
   {
     "Title": "Rogue One: A Star Wars Story",
-    "Year Released": "2016",
+    "ReleasedYear": "2016",
     "Genre": "Action",
     "ActorNameA": "Felicity Jones",
     "ActorCharA": "Jyn Erso",
@@ -34,7 +34,7 @@
   },
   {
     "Title": "Star Wars: Episode IX - The Rise of Skywalker",
-    "Year Released": "2019",
+    "ReleasedYear": "2019",
     "Genre": "Action",
     "ActorNameA": "Carrie Fisher",
     "ActorCharA": "Leia Organa",
@@ -45,7 +45,7 @@
   },
   {
     "Title": "Pulp Fiction",
-    "Year Released": "1994",
+    "ReleasedYear": "1994",
     "Genre": "Crime",
     "ActorNameA": "Tim Roth",
     "ActorCharA": "Pumpkin",
@@ -56,7 +56,7 @@
   },
   {
     "Title": "Frozen II",
-    "Year Released": "2019",
+    "ReleasedYear": "2019",
     "Genre": "Animation",
     "ActorNameA": "Kristen Bell",
     "ActorCharA": "Anna",
@@ -67,7 +67,7 @@
   },
   {
     "Title": "Inception",
-    "Year Released": "2010",
+    "ReleasedYear": "2010",
     "Genre": "Adventure",
     "ActorNameA": "Leonardo DiCaprio",
     "ActorCharA": "Cobb",
@@ -78,7 +78,7 @@
   },
   {
     "Title": "Interstellar",
-    "Year Released": "2014",
+    "ReleasedYear": "2014",
     "Genre": "Sci-fi",
     "ActorNameA": "Matthew McConaughey",
     "ActorCharA": "Cooper",
@@ -89,7 +89,7 @@
   },
   {
     "Title": "Avengers: Endgame",
-    "Year Released": "2019",
+    "ReleaseYear": "2019",
     "Genre": "Action",
     "ActorNameA": "Robert Downey Jr.",
     "ActorCharA": "Tony Stark",
@@ -100,7 +100,7 @@
   },
   {
     "Title": "Jojo Rabbit",
-    "Year Released": "2019",
+    "ReleasedYear": "2019",
     "Genre": "Comedy",
     "ActorNameA": "Roman Griffin Davis",
     "ActorCharA": "Jojo",
