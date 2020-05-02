@@ -36,21 +36,21 @@ class Register extends Component {
     render(){
         return (
             <Form horizontal>
-                <FormGroup controlId="name">
+                <FormGroup controlId="username">
                     <Col componentClass={ControlLabel} sm={2}>
-                        Name
+                        Username
                     </Col>
                     <Col sm={10}>
-                        <FormControl onChange={this.updateDetails} value={this.state.details.name} type="text" placeholder="Name" />
+                        <FormControl onChange={this.updateDetails} value={this.state.details.username} type="text" placeholder="Username" />
                     </Col>
                 </FormGroup>
 
-                <FormGroup controlId="username">
+                <FormGroup controlId="email">
                     <Col componentClass={ControlLabel} sm={2}>
                         Email
                     </Col>
                     <Col sm={10}>
-                        <FormControl onChange={this.updateDetails} value={this.state.details.username} type="text" placeholder="Username" />
+                        <FormControl onChange={this.updateDetails} value={this.state.details.email} type="text" placeholder="Email" />
                     </Col>
                 </FormGroup>
 

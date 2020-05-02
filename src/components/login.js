@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { submitLogin } from '../actions/authActions';
 import { connect } from 'react-redux';
-import { Col, Form, FormGroup, FormControl, FormLabel, Button } from 'react-bootstrap';
+import { Col, Form, FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap';
 
 class Login extends Component {
 
@@ -36,7 +36,7 @@ class Login extends Component {
         return (
             <Form horizontal>
                 <FormGroup controlId="username">
-                    <Col componentClass={FormLabel} sm={2}>
+                    <Col componentClass={ControlLabel} sm={2}>
                         Email
                     </Col>
                     <Col sm={10}>
@@ -45,7 +45,7 @@ class Login extends Component {
                 </FormGroup>
 
                 <FormGroup controlId="password">
-                    <Col componentClass={FormLabel} sm={2}>
+                    <Col componentClass={ControlLabel} sm={2}>
                         Password
                     </Col>
                     <Col sm={10}>
