@@ -1,0 +1,112 @@
+[
+  {
+    "Title": "Star Wars: Episode I - The Phantom Menace",
+    "Year Released": "1999",
+    "Genre": "Action",
+    "ActorNameA": "Ewan McGregor",
+    "ActorCharA": "Obi-wan Kenobi",
+    "ActorNameB": "Liam Neeson",
+    "ActorCharB": "Qui-gon Jin",
+    "ActorNameC": "Natalie Portman",
+    "ActorCharC": "Padmé Amidala"
+  },
+  {
+    "Title": "Star Wars: Episode IV - A New Hope",
+    "Year Released": "1977",
+    "Genre": "Action",
+    "ActorNameA": "Mark Hamill",
+    "ActorCharA": "Luke Skywalker",
+    "ActorNameB": "Harrison Ford",
+    "ActorCharB": "Han Solo",
+    "ActorNameC": "Carrie Fisher",
+    "ActorCharC": "Leia Organa"
+  },
+  {
+    "Title": "Rogue One: A Star Wars Story",
+    "Year Released": "2016",
+    "Genre": "Action",
+    "ActorNameA": "Felicity Jones",
+    "ActorCharA": "Jyn Erso",
+    "ActorNameB": "Diego Luna",
+    "ActorCharB": "Cassian Andor",
+    "ActorNameC": "Alan Tudyk",
+    "ActorCharC": "K-2SO"
+  },
+  {
+    "Title": "Star Wars: Episode IX - The Rise of Skywalker",
+    "Year Released": "2019",
+    "Genre": "Action",
+    "ActorNameA": "Carrie Fisher",
+    "ActorCharA": "Leia Organa",
+    "ActorNameB": "Adam Driver",
+    "ActorCharB": "Kylo Ren",
+    "ActorNameC": "Daisy Ridley",
+    "ActorCharC": "Rey"
+  },
+  {
+    "Title": "Pulp Fiction",
+    "Year Released": "1994",
+    "Genre": "Crime",
+    "ActorNameA": "Tim Roth",
+    "ActorCharA": "Pumpkin",
+    "ActorNameB": "Uma Thurman",
+    "ActorCharB": "Mia Wallace",
+    "ActorNameC": "Samuel L. Jackson",
+    "ActorCharC": "Jules Winnfield"
+  },
+  {
+    "Title": "Frozen II",
+    "Year Released": "2019",
+    "Genre": "Animation",
+    "ActorNameA": "Kristen Bell",
+    "ActorCharA": "Anna",
+    "ActorNameB": "Idina Menzel",
+    "ActorCharB": "Elsa",
+    "ActorNameC": "Josh Gad",
+    "ActorCharC": "Olaf"
+  },
+  {
+    "Title": "Inception",
+    "Year Released": "2010",
+    "Genre": "Adventure",
+    "ActorNameA": "Leonardo DiCaprio",
+    "ActorCharA": "Cobb",
+    "ActorNameB": "Joseph Gordin-Levitt",
+    "ActorCharB": "Arthur",
+    "ActorNameC": "Ellen Page",
+    "ActorCharC": "Ariadne"
+  },
+  {
+    "Title": "Interstellar",
+    "Year Released": "2014",
+    "Genre": "Sci-fi",
+    "ActorNameA": "Matthew McConaughey",
+    "ActorCharA": "Cooper",
+    "ActorNameB": "Anne Hathaway",
+    "ActorCharB": "Brand",
+    "ActorNameC": "Jessica Chastain",
+    "ActorCharC": "Murph"
+  },
+  {
+    "Title": "Avengers: Endgame",
+    "Year Released": "2019",
+    "Genre": "Action",
+    "ActorNameA": "Robert Downey Jr.",
+    "ActorCharA": "Tony Stark",
+    "ActorNameB": "Chris Evans",
+    "ActorCharB": "Steve Rogers",
+    "ActorNameC": "Chris Hemsworth",
+    "ActorCharC": "Thor"
+  },
+  {
+    "Title": "Jojo Rabbit",
+    "Year Released": "2019",
+    "Genre": "Comedy",
+    "ActorNameA": "Roman Griffin Davis",
+    "ActorCharA": "Jojo",
+    "ActorNameB": "Thomasin McKenzie",
+    "ActorCharB": "Elsa",
+    "ActorNameC": "Scarlett Johansson",
+    "ActorCharC": "Rosie"
+  }
+]
