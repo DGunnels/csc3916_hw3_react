@@ -44,7 +44,7 @@ class Movie extends Component {
     }
 
     render() {
-        const ActorInfo = ({ actors = [] }) => {
+        const ActorInfo = ({actors = []}) => {
             return actors.map((actor, i) =>
                 <p key={i}>
                     <b>{actor.actorName}</b> {actor.characterName}
@@ -52,7 +52,7 @@ class Movie extends Component {
             );
         };
 
-        const ReviewInfo = ({ reviews = [] }) => {
+        const ReviewInfo = ({reviews = []}) => {
             return reviews.map((review, i) =>
                 <p key={i}>
                     <b>{review.ReviewerName}</b> {review.smallQuote}
@@ -60,9 +60,7 @@ class Movie extends Component {
                 </p>
             );
         }
-    }
-    render() {
-        const MovieReview = ({ currentReview }) => {
+        const MovieReview = ({currentReview}) =>{
             return (
                 <Form horizontal>
                     <FormGroup controlId="ReviewerName">
@@ -70,7 +68,7 @@ class Movie extends Component {
                             Name
                         </Col>
                         <Col sm={10}>
-                            <FormControl onChange={this.updateDetails} value={this.state.details.ReviewerName} type="ReviewerName" placeholder="Name" />
+                            <FormControl onChange={} value={this.state.details.ReviewerName} type="ReviewerName" placeholder="Name" />
                         </Col>
                     </FormGroup>
 
@@ -79,7 +77,7 @@ class Movie extends Component {
                             SmallQuote
                         </Col>
                         <Col sm={10}>
-                            <FormControl onChange={this.updateDetails} value={this.state.details.smallQuote} type="smallQuote" placeholder="SmallQuote" />
+                            <FormControl onChange={} value={this.state.details.smallQuote} type="smallQuote" placeholder="SmallQuote" />
                         </Col>
                     </FormGroup>
 
@@ -88,7 +86,7 @@ class Movie extends Component {
                             Rating
                         </Col>
                         <Col sm={10}>
-                            <FormControl onChange={this.updateDetails} value={this.state.details.rating} type="rating" placeholder="Rating" />
+                            <FormControl onChange={} value={this.state.details.rating} type="rating" placeholder="Rating" />
                         </Col>
                     </FormGroup>
 
@@ -100,8 +98,6 @@ class Movie extends Component {
                 </Form>
             );
         }
-    }
-    render() {
         const DetailInfo = ({currentMovie = []}) => {
             if (!currentMovie) { // evaluates to true if currentMovie is null
                 return <div>Loading...</div>;
