@@ -17,8 +17,7 @@ class Movie extends Component {
         this.review = this.review.bind(this);
         this.state = {
             details: {
-                title: this.props.selectedMovie.title,
-                username: localStorage.getItem("username"),
+                username: '',
                 smallQuote: '',
                 rating: 0
             }
@@ -72,7 +71,7 @@ class Movie extends Component {
                             Name
                         </Col>
                         <Col sm={10}>
-                            <FormControl type="hidden" value={localStorage.getItem("username")} onLoad={this.updateDetails} />
+                            <FormControl key="username" value={this.state.details.ReviewerName} onLoad={this.updateDetails} />
                         </Col>
                     </FormGroup>
 
@@ -125,6 +124,7 @@ class Movie extends Component {
         };
         return (
             <DetailInfo currentMovie={this.props.selectedMovie} />
+            <MovieReview currentMovie={this.props.selectedMovie} />
         );
     }
 }
