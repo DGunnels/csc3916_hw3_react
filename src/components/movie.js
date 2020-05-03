@@ -16,10 +16,11 @@ class Movie extends Component {
         this.updateDetails = this.updateDetails.bind(this);
         this.review = this.review.bind(this);
         this.state = {
-            details:{
-                ReviewerName: '',
+            details: {
+                title: this.props.selectedMovie.title,
+                username: localStorage.getItem("username"),
                 smallQuote: '',
-                rating: ''
+                rating: 0
             }
         };
     }
@@ -34,7 +35,10 @@ class Movie extends Component {
 
     review(){
         const {dispatch} = this.props;
-        dispatch(submitReview(this.state.details));
+        dispatch(submitReview(this.state.details))
+            .then(() => {
+                this.props.history.push('/');
+            });
     }
 
     componentDidMount() {
@@ -55,38 +59,38 @@ class Movie extends Component {
         const ReviewInfo = ({reviews = []}) => {
             return reviews.map((review, i) =>
                 <p key={i}>
-                    <b>{review.ReviewerName}</b> {review.smallQuote}
+                    <b>{review.username}</b> {review.smallQuote}
                     <Glyphicon glyph={'star'} /> {review.rating}
                 </p>
             );
         }
         const MovieReview = ({currentReview}) =>{
             return (
-                <Form horizontal>
+                <Form horizontal key="reviewForm">
                     <FormGroup controlId="ReviewerName">
                         <Col componentClass={ControlLabel} sm={2}>
                             Name
                         </Col>
                         <Col sm={10}>
-                            <FormControl value={this.state.details.ReviewerName} type="ReviewerName" placeholder="Name" />
+                            <FormControl type="hidden" value={localStorage.getItem("username")} onLoad={this.updateDetails} />
                         </Col>
                     </FormGroup>
 
                     <FormGroup controlId="smallQuote">
                         <Col componentClass={ControlLabel} sm={2}>
-                            SmallQuote
+                            Personal Quote
                         </Col>
                         <Col sm={10}>
-                            <FormControl value={this.state.details.smallQuote} type="smallQuote" placeholder="SmallQuote" />
+                            <FormControl key="Quotes" onChange={this.updateDetails} value={this.state.details.smallQuote} type="smallQuote" placeholder="Personal quote about the movie." />
                         </Col>
                     </FormGroup>
 
                     <FormGroup controlId="rating">
                         <Col componentClass={ControlLabel} sm={2}>
-                            Rating
+                            Rating between 0 and 5 stars
                         </Col>
                         <Col sm={10}>
-                            <FormControl value={this.state.details.rating} type="rating" placeholder="Rating" />
+                            <FormControl key="Ratings" onChange={this.updateDetails} value={this.state.details.rating} type="Number" min = "0" max = "5" />
                         </Col>
                     </FormGroup>
 
