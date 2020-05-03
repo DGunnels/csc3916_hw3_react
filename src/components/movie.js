@@ -17,7 +17,7 @@ class Movie extends Component {
         this.review = this.review.bind(this);
         this.state = {
             details:{
-                Reviewername: '',
+                ReviewerName: '',
                 smallQuote: '',
                 rating: ''
             }
@@ -105,7 +105,7 @@ class Movie extends Component {
             return (
                 <Panel>
                     <Panel.Heading>Movie Detail</Panel.Heading>
-                    <Panel.Body><Image className="image" src={currentMovie.imageUrl} thumbnail /></Panel.Body>
+                    <Panel.Body><Image className="image" src={currentMovie.imgURL} thumbnail /></Panel.Body>
                     <ListGroup>
                         <ListGroupItem>{currentMovie.title}</ListGroupItem>
                         <ListGroupItem><ActorInfo actors={currentMovie.Actors} /></ListGroupItem>
