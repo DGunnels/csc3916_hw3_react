@@ -50,7 +50,7 @@ class Movie extends Component {
         const ActorInfo = ({ actors = [] }) => {
             return actors.map((actor, i) =>
                 <p key={i}>
-                    <b>{actor.Name}</b> {actor.Character}
+                    <b>{actor.actorName}</b> {actor.characterName}
                 </p>
             );
         };
@@ -63,37 +63,34 @@ class Movie extends Component {
                 </p>
             );
         }
-        const MovieReview = ({ currentMovie }) => {
+        const MovieReview = ({ currentReview }) => {
             return (
-                <Form horizontal key="reviewForm">
+                <Form horizontal>
                     <FormGroup controlId="ReviewerName">
                         <Col componentClass={ControlLabel} sm={2}>
                             Name
                         </Col>
                         <Col sm={10}>
-                            <FormControl key="username" value={this.state.details.ReviewerName} onLoad={this.updateDetails} placeholder="Username" type="text" />
+                            <FormControl onChange={this.updateDetails} value={this.state.details.ReviewerName} type="ReviewerName" placeholder="Name" />
                         </Col>
                     </FormGroup>
 
                     <FormGroup controlId="smallQuote">
                         <Col componentClass={ControlLabel} sm={2}>
-                            Personal Quote
+                            SmallQuote
                         </Col>
                         <Col sm={10}>
-                            <FormControl key="Quotes" onChange={this.updateDetails} value={this.state.details.smallQuote} type="smallQuote" placeholder="Personal quote about the movie." />
+                            <FormControl onChange={this.updateDetails} value={this.state.details.smallQuote} type="smallQuote" placeholder="SmallQuote" />
                         </Col>
                     </FormGroup>
 
                     <FormGroup controlId="rating">
                         <Col componentClass={ControlLabel} sm={2}>
-                            Rating between 0 and 5 stars
+                            Rating
                         </Col>
                         <Col sm={10}>
-                            <FormControl key="Ratings" onChange={this.updateDetails} value={this.state.details.rating} type="Number" min="0" max="5" />
+                            <FormControl onChange={this.updateDetails} value={this.state.details.rating} type="rating" placeholder="Rating" />
                         </Col>
-                    </FormGroup>
-                    <FormGroup controlId="title">
-                        <FormControl type="hidden" value={currentMovie.title} onLoad={this.updateDetails} />
                     </FormGroup>
 
                     <FormGroup>
@@ -110,11 +107,11 @@ class Movie extends Component {
             }
             return (
                 <Panel>
-                    <Panel.Heading>Movie Details</Panel.Heading>
+                    <Panel.Heading>Movie Detail</Panel.Heading>
                     <Panel.Body><Image className="image" src={currentMovie.imgURL} thumbnail /></Panel.Body>
                     <ListGroup>
                         <ListGroupItem>{currentMovie.title}</ListGroupItem>
-                        <ListGroupItem><ActorInfo actors={currentMovie.actors} /></ListGroupItem>
+                        <ListGroupItem><ActorInfo actors={currentMovie.Actors} /></ListGroupItem>
                         <ListGroupItem><h4><Glyphicon glyph={'star'} /> {currentMovie.avgRating} </h4></ListGroupItem>
                     </ListGroup>
                     <Panel.Body><ReviewInfo reviews={currentMovie.Reviews} /></Panel.Body>
@@ -126,9 +123,7 @@ class Movie extends Component {
             );
         };
         return (
-            <div>
-                <DetailInfo currentMovie={this.props.selectedMovie} />
-            </div>
+            <DetailInfo currentMovie={this.props.selectedMovie} />
         );
     }
 }
