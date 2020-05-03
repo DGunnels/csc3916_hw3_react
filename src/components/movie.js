@@ -126,6 +126,7 @@ class Movie extends Component {
         return (
             <div>
                 <DetailInfo currentMovie={this.props.selectedMovie} />
+                <MovieReview currentReview={currentMovie.title} />
             </div>
         );
     }
