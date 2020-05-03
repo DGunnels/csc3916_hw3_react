@@ -118,7 +118,9 @@ class Movie extends Component {
                         <ListGroupItem><h4><Glyphicon glyph={'star'} /> {currentMovie.avgRating} </h4></ListGroupItem>
                     </ListGroup>
                     <Panel.Body><ReviewInfo reviews={currentMovie.Reviews} /></Panel.Body>
-                    
+                    <ListGroup>
+                        <ListGroupItem><MovieReview currentReview={currentMovie.title} /></ListGroupItem>
+                    </ListGroup>
                 </Panel>
 
             );
@@ -126,7 +128,6 @@ class Movie extends Component {
         return (
             <div>
                 <DetailInfo currentMovie={this.props.selectedMovie} />
-                <MovieReview currentReview={currentMovie.title} />
             </div>
         );
     }
