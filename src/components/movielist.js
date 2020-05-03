@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { fetchMovies } from '../actions/movieActions';
 import { setMovie } from '../actions/movieActions';
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 import { Image } from 'react-bootstrap'
 import { Carousel } from 'react-bootstrap'
 import { Glyphicon } from 'react-bootstrap'
-import { LinkContainer } from 'react-router-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap';
 
 //require a callback function to be sent to MovieList to update the header subtitle
 
@@ -16,23 +16,23 @@ class MovieList extends Component {
     }
 
     componentDidMount() {
-        const { dispatch } = this.props;
+        const {dispatch} = this.props;
         dispatch(fetchMovies());
     }
 
     handleSelect(selectedIndex, e) {
-        const { dispatch } = this.props;
+        const {dispatch} = this.props;
         dispatch(setMovie(this.props.movies[selectedIndex]));
     }
 
     handleClick = (movie) => {
-        const { dispatch } = this.props;
+        const {dispatch} = this.props;
         dispatch(setMovie(movie));
     }
 
     render() {
 
-        const MovieListCarousel = ({ movieList }) => {
+        const MovieListCarousel= ({movieList}) => {
             if (!movieList) { // evaluates to true if currentMovie is null
                 return <div>Loading...</div>;
             }
@@ -42,7 +42,7 @@ class MovieList extends Component {
                     {movieList.map((movie) =>
                         <Carousel.Item key={movie._Title}>
                             <div>
-                                <LinkContainer to={'/movie/' + movie._id} onClick={() => this.handleClick(movie)}>
+                                <LinkContainer to={'/movie/'+movie._id} onClick={()=>this.handleClick(movie)}>
                                     <Image className="image" src={movie.imageUrl} thumbnail />
                                 </LinkContainer>
                             </div>

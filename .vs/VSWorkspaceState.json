@@ -2,15 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\public",
-    "\\public\\assets\\js",
     "\\src",
-    "\\src\\assets",
-    "\\src\\assets\\bootstrap",
-    "\\src\\assets\\bootstrap\\css",
-    "\\src\\assets\\fonts",
-    "\\src\\assets\\img",
-    "\\src\\assets\\img\\dogs"
+    "\\src\\actions",
+    "\\src\\components",
+    "\\src\\constants",
+    "\\src\\reducers",
+    "\\src\\stores"
   ],
-  "SelectedNode": "\\package.json",
   "PreviewInSolutionExplorer": false
 }

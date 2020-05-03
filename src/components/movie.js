@@ -1,29 +1,29 @@
-import React, { Component } from 'react';
-import { connect } from "react-redux";
+import React, { Component }  from 'react';
+import {connect} from "react-redux";
 import { Glyphicon, Panel, ListGroup, ListGroupItem } from 'react-bootstrap'
 import { Image } from 'react-bootstrap'
 import { withRouter } from "react-router-dom";
-import { fetchMovie } from "../actions/movieActions";
-import { submitReview } from "../actions/movieActions";
+import {fetchMovie} from "../actions/movieActions";
+import {submitReview} from "../actions/movieActions";
 import { Col, Form, FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap';
 //support routing by creating a new component
 
 class Movie extends Component {
 
-    constructor() {
+    constructor(){
         super();
 
         this.updateDetails = this.updateDetails.bind(this);
         this.review = this.review.bind(this);
         this.state = {
-            details: {
+            details:{
                 Reviewername: '',
                 smallQuote: '',
                 rating: ''
             }
         };
     }
-    updateDetails(event) {
+    updateDetails(event){
         let updateDetails = Object.assign({}, this.state.details);
 
         updateDetails[event.target.id] = event.target.value;
@@ -32,19 +32,19 @@ class Movie extends Component {
         });
     }
 
-    review() {
-        const { dispatch } = this.props;
+    review(){
+        const {dispatch} = this.props;
         dispatch(submitReview(this.state.details));
     }
 
     componentDidMount() {
-        const { dispatch } = this.props;
+        const {dispatch} = this.props;
         if (this.props.selectedMovie == null)
             dispatch(fetchMovie(this.props.movieId));
     }
 
     render() {
-        const ActorInfo = ({ actors = [] }) => {
+        const ActorInfo = ({actors = []}) => {
             return actors.map((actor, i) =>
                 <p key={i}>
                     <b>{actor.actorName}</b> {actor.characterName}
@@ -52,7 +52,7 @@ class Movie extends Component {
             );
         };
 
-        const ReviewInfo = ({ reviews = [] }) => {
+        const ReviewInfo = ({reviews = []}) => {
             return reviews.map((review, i) =>
                 <p key={i}>
                     <b>{review.ReviewerName}</b> {review.smallQuote}
@@ -60,7 +60,7 @@ class Movie extends Component {
                 </p>
             );
         }
-        const MovieReview = ({ currentReview }) => {
+        const MovieReview = ({currentReview}) =>{
             return (
                 <Form horizontal>
                     <FormGroup controlId="ReviewerName">
@@ -98,7 +98,7 @@ class Movie extends Component {
                 </Form>
             );
         }
-        const DetailInfo = ({ currentMovie = [] }) => {
+        const DetailInfo = ({currentMovie = []}) => {
             if (!currentMovie) { // evaluates to true if currentMovie is null
                 return <div>Loading...</div>;
             }

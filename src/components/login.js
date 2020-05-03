@@ -11,14 +11,14 @@ class Login extends Component {
         this.login = this.login.bind(this);
 
         this.state = {
-            details: {
+            details:{
                 username: '',
                 password: ''
             }
         };
     }
 
-    updateDetails(event) {
+    updateDetails(event){
         let updateDetails = Object.assign({}, this.state.details);
 
         updateDetails[event.target.id] = event.target.value;
@@ -28,11 +28,11 @@ class Login extends Component {
     }
 
     login() {
-        const { dispatch } = this.props;
+        const {dispatch} = this.props;
         dispatch(submitLogin(this.state.details));
     }
 
-    render() {
+    render(){
         return (
             <Form horizontal>
                 <FormGroup controlId="username">
