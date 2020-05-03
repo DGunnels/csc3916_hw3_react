@@ -31,49 +31,47 @@ export function setMovie(movie) {
 export function fetchMovies() {
     const env = runtimeEnv();
     return dispatch => {
-        return fetch(`https://homework-backend-server.herokuapp.com/movies`, {
+        return fetch(`${env.REACT_APP_API_URL}/movies?reviews=true`, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
                 'Authorization': localStorage.getItem('token')
             },
-            mode: 'cors'
-        })
-            .then((response) => {
+            mode: 'cors'})
+            .then( (response) => {
                 if (!response.ok) {
                     throw Error(response.statusText);
                 }
                 return response.json();
             })
-            .then((res) => {
+            .then( (res) => {
                 dispatch(moviesFetched(res));
             })
-            .catch((e) => console.log(e));
+            .catch( (e) => console.log(e) );
     }
 }
 
-export function fetchMovie(movieId) {
+export function fetchMovie(movieId){
     const env = runtimeEnv();
     return dispatch => {
-        return fetch(`https://homework-backend-server.herokuapp.com/movies/${movieId}?reviews=true`, {
+        return fetch(`${env.REACT_APP_API_URL}/movies/${movieId}?reviews=true`, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
                 'Authorization': localStorage.getItem('token')
             },
-            mode: 'cors'
-        })
-            .then((response) => {
+            mode: 'cors'})
+            .then( (response) => {
                 if (!response.ok) {
                     throw Error(response.statusText);
                 }
                 return response.json();
             })
-            .then((res) => {
+            .then( (res) => {
                 dispatch(movieFetched(res));
             })
-            .catch((e) => console.log(e));
+            .catch( (e) => console.log(e) );
     }
 }
