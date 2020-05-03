@@ -68,7 +68,7 @@ class Movie extends Component {
                             Name
                         </Col>
                         <Col sm={10}>
-                            <FormControl onChange={} value={this.state.details.ReviewerName} type="ReviewerName" placeholder="Name" />
+                            <FormControl value={this.state.details.ReviewerName} type="ReviewerName" placeholder="Name" />
                         </Col>
                     </FormGroup>
 
@@ -77,7 +77,7 @@ class Movie extends Component {
                             SmallQuote
                         </Col>
                         <Col sm={10}>
-                            <FormControl onChange={} value={this.state.details.smallQuote} type="smallQuote" placeholder="SmallQuote" />
+                            <FormControl value={this.state.details.smallQuote} type="smallQuote" placeholder="SmallQuote" />
                         </Col>
                     </FormGroup>
 
@@ -86,7 +86,7 @@ class Movie extends Component {
                             Rating
                         </Col>
                         <Col sm={10}>
-                            <FormControl onChange={} value={this.state.details.rating} type="rating" placeholder="Rating" />
+                            <FormControl value={this.state.details.rating} type="rating" placeholder="Rating" />
                         </Col>
                     </FormGroup>
 
