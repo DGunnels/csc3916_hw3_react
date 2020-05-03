@@ -1,17 +1,17 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 import { submitRegister } from '../actions/authActions';
 import { connect } from 'react-redux';
 import { Col, Form, FormGroup, FormControl, ControlLabel, Button } from 'react-bootstrap';
 
 class Register extends Component {
 
-    constructor(){
+    constructor() {
         super();
 
         this.updateDetails = this.updateDetails.bind(this);
         this.register = this.register.bind(this);
         this.state = {
-            details:{
+            details: {
                 name: '',
                 username: '',
                 password: ''
@@ -19,7 +19,7 @@ class Register extends Component {
         };
     }
 
-    updateDetails(event){
+    updateDetails(event) {
         let updateDetails = Object.assign({}, this.state.details);
 
         updateDetails[event.target.id] = event.target.value;
@@ -28,12 +28,12 @@ class Register extends Component {
         });
     }
 
-    register(){
-        const {dispatch} = this.props;
+    register() {
+        const { dispatch } = this.props;
         dispatch(submitRegister(this.state.details));
     }
 
-    render(){
+    render() {
         return (
             <Form horizontal>
                 <FormGroup controlId="name">
@@ -41,16 +41,16 @@ class Register extends Component {
                         Name
                     </Col>
                     <Col sm={10}>
-                        <FormControl onChange={this.updateDetails} value={this.state.details.name} type="text" placeholder="Name" />
+                        <FormControl onChange={this.updateDetails} value={this.state.details.name} type="name" placeholder="Name" />
                     </Col>
                 </FormGroup>
 
                 <FormGroup controlId="username">
                     <Col componentClass={ControlLabel} sm={2}>
-                        Email
+                        Username
                     </Col>
                     <Col sm={10}>
-                        <FormControl onChange={this.updateDetails} value={this.state.details.username} type="text" placeholder="Username" />
+                        <FormControl onChange={this.updateDetails} value={this.state.details.username} type="username" placeholder="Username" />
                     </Col>
                 </FormGroup>
 
