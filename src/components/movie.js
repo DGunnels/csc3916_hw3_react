@@ -80,7 +80,7 @@ class Movie extends Component {
                             Personal Quote
                         </Col>
                         <Col sm={10}>
-                            <FormControl key="Quotes" onChange={this.updateDetails} value={this.state.details.smallQuote} type="smallQuote" placeholder="Personal quote about the movie." onLoad={this.updateDetails} />
+                            <FormControl key="Quotes" value={this.state.details.smallQuote} type="smallQuote" placeholder="Personal quote about the movie." onLoad={this.updateDetails} />
                         </Col>
                     </FormGroup>
 
@@ -89,7 +89,7 @@ class Movie extends Component {
                             Rating between 0 and 5 stars
                         </Col>
                         <Col sm={10}>
-                            <FormControl key="Ratings" onChange={this.updateDetails} value={this.state.details.rating} type="Number" min="0" max="5" onLoad={this.updateDetails} />
+                            <FormControl key="Ratings" value={this.state.details.rating} type="Number" min="0" max="5" onLoad={this.updateDetails} />
                         </Col>
                     </FormGroup>
 
