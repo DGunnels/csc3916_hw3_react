@@ -3,6 +3,16 @@
     background-color: #222;
 }
 
+.carousel .thumb img {
+    height: 50% !important;
+    width: auto;
+}
+
+.carousel .slide img {
+    height: 50% !important;
+    width: auto;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
