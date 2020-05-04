@@ -80,13 +80,14 @@ class Movie extends Component {
                 </p>
             );
         }
+
         const MovieReview = ({ currentReview }) => {
             return (
-                <Form horizontal>
+                <Form horizontal key="ReviewFormKey">
 
                     <FormGroup controlId="smallQuote">
                         <Col componentClass={ControlLabel} sm={2}>
-                            SmallQuote
+                            Summary Quote:
                         </Col>
                         <Col sm={10}>
                             <FormControl onChange={this.handleChange} value={this.state.smallQuote} type="text" placeholder="Quote." />
@@ -96,8 +97,10 @@ class Movie extends Component {
 
 
                 </Form>
-            );
+            )
         }
+
+
         const DetailInfo = ({ currentMovie = [] }) => {
             if (!currentMovie) { // evaluates to true if currentMovie is null
                 return <div>Loading...</div>;
@@ -123,7 +126,9 @@ class Movie extends Component {
             <DetailInfo currentMovie={this.props.selectedMovie} />
         );
     }
+
 }
+
 
 const mapStateToProps = (state, ownProps) => {
     console.log(ownProps);
