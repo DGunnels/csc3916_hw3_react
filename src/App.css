@@ -11,10 +11,47 @@
 .carousel .slide image {
     height: 500px !important;
     width: auto;
+
 }
+.carousel.caption {
+    color: #2989bb;
+}
+
+.carousel .item {
+    height: 500px !important;
+    width: auto;
+}
+.carousel-item {
+    height: 500px !important;
+    width: auto;
+}
+
+.carousel {
+    
+}
+
 
 .panel-body {
     background-color: #222;
+    color: #2989bb;
+}
+.panel {
+    background-color: #222;
+    color: #2989bb;
+}
+.panel-heading {
+    background-color: #222;
+    color: #2989bb;
+}
+
+.panel .body {
+    background-color: #222;
+    color: #2989bb;
+}
+
+.panel .heading {
+    background-color: #222;
+    color: #2989bb;
 }
 
 .App-logo {
