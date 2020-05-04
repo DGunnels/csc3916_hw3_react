@@ -43,7 +43,7 @@ class Movie extends Component {
     }
 
     handleChange(event) {
-        updateQuote[event.target.smallQuote] = event.target.value;
+        let updateQuote[event.target.smallQuote] = event.target.value;
         this.setState({
             smallQuote: updateQuote
         });
