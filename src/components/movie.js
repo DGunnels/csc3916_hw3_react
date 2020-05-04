@@ -41,7 +41,7 @@ class Movie extends Component {
     }
 
     handleChange(event) {
-        this.setState({ smallQuote: event.target.smallQuote });
+        this.setState({ smallQuote: event.target.value });
     }
 
     //handleSubmit(event) {
