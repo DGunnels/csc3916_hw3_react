@@ -96,7 +96,7 @@ class Movie extends Component {
                             SmallQuote
                         </Col>
                         <Col sm={10}>
-                            <FormControl onChange={this.updateDetails} value={this.state.details.smallQuote} type="text" placeholder="Quote." />
+                            <FormControl onChange={this.handleChange} value={this.state.smallQuote} type="text" placeholder="Quote." />
                         </Col>
                     </FormGroup>
 
