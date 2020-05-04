@@ -31,7 +31,7 @@ class Movie extends Component {
     //        details: updateDetails
     //    });
     //}
-
+    
 
     constructor(props) {
         super(props);
@@ -85,19 +85,22 @@ class Movie extends Component {
             );
         }
 
-        const MovieReview = (
-            <Form horizontal>
-                <FormGroup controlId="smallQuote">
-                    <Col componentClass={ControlLabel} sm={2}>
-                        Summary Quote:
+        const MovieReview = ({ currentReview }) => {
+            const form = (
+                <Form horizontal key={currentReview} >
+                     
+                    <FormGroup controlId="smallQuote">
+                        <Col componentClass={ControlLabel} sm={2}>
+                            Summary Quote:
                         </Col>
-                    <Col sm={10}>
-                        <FormControl onChange={this.handleChange} value={this.state.smallQuote} type="text" placeholder="Quote." />
-                    </Col>
-                </FormGroup>
-            </Form>
-        );
-
+                        <Col sm={10}>
+                            <FormControl onChange={this.handleChange} value={this.state.smallQuote} type="text" placeholder="Quote." />
+                        </Col>
+                    </FormGroup>
+                </Form>
+            )
+            return form;
+        }
 
 
         const DetailInfo = ({ currentMovie = [] }) => {
