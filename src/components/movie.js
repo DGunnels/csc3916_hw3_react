@@ -17,9 +17,9 @@ class Movie extends Component {
         this.review = this.review.bind(this);
         this.state = {
             details: {
-                username: '',
+                username: this.details.username,
                 smallQuote: '',
-                rating: 0
+                rating: ''
             }
         };
     }
@@ -68,10 +68,9 @@ class Movie extends Component {
                 <Form horizontal>
                     <FormGroup controlId="ReviewerName">
                         <Col componentClass={ControlLabel} sm={2}>
-                            Name
                         </Col>
                         <Col sm={10}>
-                            <FormControl onChange={this.updateDetails} value={this.state.details.ReviewerName} type="ReviewerName" placeholder="Name" />
+                            <FormControl type="hidden" value={this.state.username} />
                         </Col>
                     </FormGroup>
 
