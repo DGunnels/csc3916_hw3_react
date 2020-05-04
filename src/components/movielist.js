@@ -48,14 +48,11 @@ class MovieList extends Component {
                                     <Image className="image" src={movie.imgURL} thumbnail />
                                 </LinkContainer>
                             </div>
-                        </Carousel.Item>)
-                    }
-                    <Carousel.Caption>
-                        <h3>{movie.Title}</h3>
-                        <Glyphicon glyph={'star'} /> {movie.avgRating} -- {movie.Year}
-                    </Carousel.Caption>
-
-
+                            <Carousel.Caption>
+                                <h3>{movie.Title}</h3>
+                                <Glyphicon glyph={'star'} /> {movie.avgRating} -- {movie.Year}
+                            </Carousel.Caption>
+                        </Carousel.Item>)}
                 </Carousel>);
         }
 
