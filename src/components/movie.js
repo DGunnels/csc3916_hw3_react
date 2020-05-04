@@ -35,18 +35,13 @@ class Movie extends Component {
 
     constructor(props) {
         super(props);
+        this.state = { smallQuote: '' };
         this.handleChange = this.handleChange.bind(this);
-        this.state = {
-            smallQuote: ''
-        };
         //this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
-        let updateQuote[event.target.smallQuote] = event.target.value;
-        this.setState({
-            smallQuote: updateQuote
-        });
+        this.setState({ smallQuote: event.target.value });
     }
 
     //handleSubmit(event) {
