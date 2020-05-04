@@ -83,13 +83,6 @@ class Movie extends Component {
         const MovieReview = ({ currentReview }) => {
             return (
                 <Form horizontal>
-                    <FormGroup controlId="ReviewerName">
-                        <Col componentClass={ControlLabel} sm={2}>
-                        </Col>
-                        <Col sm={10}>
-                            <FormControl type="hidden" value={this.state.username} />
-                        </Col>
-                    </FormGroup>
 
                     <FormGroup controlId="smallQuote">
                         <Col componentClass={ControlLabel} sm={2}>
@@ -100,20 +93,29 @@ class Movie extends Component {
                         </Col>
                     </FormGroup>
 
-                    <FormGroup controlId="rating">
-                        <Col componentClass={ControlLabel} sm={2}>
-                            Rating
-                        </Col>
-                        <Col sm={10}>
-                            <FormControl onChange={this.updateDetails} value={this.state.details.rating} type="rating" placeholder="Rating" />
-                        </Col>
-                    </FormGroup>
 
-                    <FormGroup>
-                        <Col smOffset={2} sm={10}>
-                            <Button onClick={this.review}>Submit</Button>
-                        </Col>
-                    </FormGroup>
+
+                    //<FormGroup controlId="ReviewerName">
+                    //    <Col componentClass={ControlLabel} sm={2}>
+                    //    </Col>
+                    //    <Col sm={10}>
+                    //        <FormControl type="hidden" value={this.state.username} />
+                    //    </Col>
+                    //</FormGroup>
+                    //<FormGroup controlId="rating">
+                    //    <Col componentClass={ControlLabel} sm={2}>
+                    //        Rating
+                    //    </Col>
+                    //    <Col sm={10}>
+                    //        <FormControl onChange={this.updateDetails} value={this.state.details.rating} type="rating" placeholder="Rating" />
+                    //    </Col>
+                    //</FormGroup>
+
+                    //<FormGroup>
+                    //    <Col smOffset={2} sm={10}>
+                    //        <Button onClick={this.review}>Submit</Button>
+                    //    </Col>
+                    //</FormGroup>
                 </Form>
             );
         }
