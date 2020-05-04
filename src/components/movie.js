@@ -113,7 +113,7 @@ class Movie extends Component {
                     </ListGroup>
                     <Panel.Body><ReviewInfo reviews={currentMovie.Reviews} /></Panel.Body>
                     <ListGroup>
-                        <ListGroupItem key={currentMovie}><MovieReview currentReview={currentMovie.Title} /></ListGroupItem>
+                        <ListGroupItem key={currentMovie.Title}><MovieReview currentReview={currentMovie.Title} /></ListGroupItem>
                     </ListGroup>
                 </Panel>
 
