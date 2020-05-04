@@ -105,7 +105,7 @@ class Movie extends Component {
             return (
                 <Panel>
                     <Panel.Heading>Movie Details</Panel.Heading>
-                    <Panel.Body><Image className="image" src={currentMovie.imgURL} thumbnail /></Panel.Body>
+                    <Panel.Body><Image className="image" src={currentMovie.imgURL} style={{ "height": 500 }} thumbnail /></Panel.Body>
                     <ListGroup>
                         <ListGroupItem>{currentMovie.Title}</ListGroupItem>
                         <ListGroupItem><ActorInfo actors={currentMovie.Actors} /></ListGroupItem>
