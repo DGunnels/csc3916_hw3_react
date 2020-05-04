@@ -4,13 +4,17 @@
 }
 
 .carousel .thumbnail image {
-    height: 50% !important;
+    height: 500px !important;
     width: auto;
 }
 
 .carousel .slide image {
-    height: 50% !important;
+    height: 500px !important;
     width: auto;
+}
+
+.panel-body {
+    background-color: #222;
 }
 
 .App-logo {
