@@ -13,22 +13,18 @@
     width: auto;
 
 }
-.carousel.caption {
+.carousel .image {
+    height: 500px !important;
+    width: auto;
+}
+
+.carousel-caption {
     color: #2989bb;
 }
-
-.carousel .item {
-    height: 500px !important;
-    width: auto;
-}
 .carousel-item {
-    height: 500px !important;
     width: auto;
 }
 
-.carousel {
-    
-}
 
 
 .panel-body {
