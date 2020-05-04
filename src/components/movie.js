@@ -104,7 +104,7 @@ class Movie extends Component {
             }
             return (
                 <Panel>
-                    <Panel.Heading>Movie Detail</Panel.Heading>
+                    <Panel.Heading>Movie Details</Panel.Heading>
                     <Panel.Body><Image className="image" src={currentMovie.imgURL} thumbnail /></Panel.Body>
                     <ListGroup>
                         <ListGroupItem>{currentMovie.Title}</ListGroupItem>
@@ -113,7 +113,7 @@ class Movie extends Component {
                     </ListGroup>
                     <Panel.Body><ReviewInfo reviews={currentMovie.Reviews} /></Panel.Body>
                     <ListGroup>
-                        <ListGroupItem><MovieReview currentReview={currentMovie.Title} /></ListGroupItem>
+                        <ListGroupItem key={currentMovie}><MovieReview currentReview={currentMovie.Title} /></ListGroupItem>
                     </ListGroup>
                 </Panel>
 
