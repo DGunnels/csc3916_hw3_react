@@ -33,15 +33,20 @@ class Movie extends Component {
     //}
     
 
-    constructor() {
-        super();
-        this.state = { smallQuote: '' };
+    constructor(props) {
+        super(props);
         this.handleChange = this.handleChange.bind(this);
+        this.state = {
+            smallQuote: ''
+        };
         //this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
-        this.setState({ smallQuote: event.target.value });
+        updateQuote[event.target.smallQuote] = event.target.value;
+        this.setState({
+            smallQuote: updateQuote
+        });
     }
 
     //handleSubmit(event) {
@@ -67,7 +72,7 @@ class Movie extends Component {
         const ActorInfo = ({ actors = [] }) => {
             return actors.map((actor, i) =>
                 <p key={i}>
-                    <b>{actor.Name}</b> {actor.Character}
+                    <b>{actor.Name}</b> - {actor.Character}
                 </p>
             );
         };

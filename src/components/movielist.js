@@ -34,7 +34,9 @@ class MovieList extends Component {
 
         const MovieListCarousel= ({movieList}) => {
             if (!movieList) { // evaluates to true if currentMovie is null
-                return <div>Loading...</div>;
+                return (
+                    <div>Loading...</div>
+                );
             }
 
             return (
@@ -43,12 +45,12 @@ class MovieList extends Component {
                         <Carousel.Item key={movie._Title}>
                             <div>
                                 <LinkContainer to={'/movie/'+movie._id} onClick={()=>this.handleClick(movie)}>
-                                    <Image className="image" src={movie.imgURL} thumbnail />
+                                    <Image className="image" src={movie.imgURL} style={{"width": "50%"}} thumbnail />
                                 </LinkContainer>
                             </div>
                             <Carousel.Caption>
-                                <h3>{movie.title}</h3>
-                                <Glyphicon glyph={'star'} /> {movie.avgRating} &nbsp;&nbsp; {movie.Year}
+                                <h3>{movie.Title}</h3>
+                                <Glyphicon glyph={'star'} /> {movie.avgRating} -- {movie.Year}
                             </Carousel.Caption>
                         </Carousel.Item>)}
                 </Carousel>);
