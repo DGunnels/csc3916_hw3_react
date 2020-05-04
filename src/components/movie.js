@@ -31,7 +31,7 @@ class Movie extends Component {
     //        details: updateDetails
     //    });
     //}
-
+    
 
     constructor() {
         super();
@@ -83,19 +83,16 @@ class Movie extends Component {
 
         const MovieReview = ({ currentReview }) => {
             return (
-                <Form horizontal>
-
+                <Form horizontal key={currentReview} >
+                     
                     <FormGroup controlId="smallQuote">
                         <Col componentClass={ControlLabel} sm={2}>
                             Summary Quote:
                         </Col>
                         <Col sm={10}>
-                            <FormControl key={this.state} onChange={this.handleChange} value={this.state.smallQuote} type="text" placeholder="Quote." />
+                            <FormControl onChange={this.handleChange} value={this.state.smallQuote} type="text" placeholder="Quote." />
                         </Col>
                     </FormGroup>
-
-
-
                 </Form>
             )
         }
@@ -110,13 +107,13 @@ class Movie extends Component {
                     <Panel.Heading>Movie Detail</Panel.Heading>
                     <Panel.Body><Image className="image" src={currentMovie.imgURL} thumbnail /></Panel.Body>
                     <ListGroup>
-                        <ListGroupItem>{currentMovie.title}</ListGroupItem>
+                        <ListGroupItem>{currentMovie.Title}</ListGroupItem>
                         <ListGroupItem><ActorInfo actors={currentMovie.Actors} /></ListGroupItem>
                         <ListGroupItem><h4><Glyphicon glyph={'star'} /> {currentMovie.avgRating} </h4></ListGroupItem>
                     </ListGroup>
                     <Panel.Body><ReviewInfo reviews={currentMovie.Reviews} /></Panel.Body>
                     <ListGroup>
-                        <ListGroupItem><MovieReview currentReview={currentMovie.title} /></ListGroupItem>
+                        <ListGroupItem><MovieReview currentReview={currentMovie.Title} /></ListGroupItem>
                     </ListGroup>
                 </Panel>
 
