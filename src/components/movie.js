@@ -17,7 +17,7 @@ class Movie extends Component {
         this.review = this.review.bind(this);
         this.state = {
             details: {
-                username: this.details.username,
+                username: '',
                 smallQuote: '',
                 rating: ''
             }
