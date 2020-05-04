@@ -83,14 +83,14 @@ class Movie extends Component {
 
         const MovieReview = ({ currentReview }) => {
             return (
-                <Form horizontal key="ReviewFormKey">
+                <Form horizontal>
 
                     <FormGroup controlId="smallQuote">
                         <Col componentClass={ControlLabel} sm={2}>
                             Summary Quote:
                         </Col>
                         <Col sm={10}>
-                            <FormControl onChange={this.handleChange} value={this.state.smallQuote} type="text" placeholder="Quote." />
+                            <FormControl key={this.state} onChange={this.handleChange} value={this.state.smallQuote} type="text" placeholder="Quote." />
                         </Col>
                     </FormGroup>
 
