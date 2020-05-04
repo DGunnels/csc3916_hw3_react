@@ -50,7 +50,7 @@ class Movie extends Component {
         const ActorInfo = ({ actors = [] }) => {
             return actors.map((actor, i) =>
                 <p key={i}>
-                    <b>{actor.actorName}</b> {actor.characterName}
+                    <b>{actor.Name}</b> {actor.Character}
                 </p>
             );
         };
@@ -79,7 +79,7 @@ class Movie extends Component {
                             SmallQuote
                         </Col>
                         <Col sm={10}>
-                            <FormControl value={this.state.details.smallQuote} type="smallQuote" placeholder="SmallQuote" />
+                            <FormControl /*onChange={this.updateDetails}*/ value={this.state.details.smallQuote} type="text" placeholder="Quote." />
                         </Col>
                     </FormGroup>
 
