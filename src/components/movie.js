@@ -10,27 +10,44 @@ import { Col, Form, FormGroup, FormControl, ControlLabel, Button } from 'react-b
 
 class Movie extends Component {
 
+    //constructor() {
+    //    super();
+
+    //    this.updateDetails = this.updateDetails.bind(this);
+    //    this.review = this.review.bind(this);
+    //    this.state = {
+    //        details: {
+    //            username: '',
+    //            smallQuote: '',
+    //            rating: ''
+    //        }
+    //    };
+    //}
+    //updateDetails(event) {
+    //    let updateDetails = Object.assign({}, this.state.details);
+
+    //    updateDetails[event.target.id] = event.target.value;
+    //    this.setState({
+    //        details: updateDetails
+    //    });
+    //}
+
+
     constructor() {
         super();
-
-        this.updateDetails = this.updateDetails.bind(this);
-        this.review = this.review.bind(this);
-        this.state = {
-            details: {
-                username: '',
-                smallQuote: '',
-                rating: ''
-            }
-        };
+        this.state = { smallQuote: '' };
+        this.handleChange = this.handleChange.bind(this);
+        //this.handleSubmit = this.handleSubmit.bind(this);
     }
-    updateDetails(event) {
-        let updateDetails = Object.assign({}, this.state.details);
 
-        updateDetails[event.target.id] = event.target.value;
-        this.setState({
-            details: updateDetails
-        });
+    handleChange(event) {
+        this.setState({ smallQuote: event.target.smallQuote });
     }
+
+    //handleSubmit(event) {
+    //    alert('a name is submitted: ' + this.state.value);
+    //    event.preventDefault();
+    //}
 
     review() {
         const { dispatch } = this.props;
@@ -79,7 +96,7 @@ class Movie extends Component {
                             SmallQuote
                         </Col>
                         <Col sm={10}>
-                            <FormControl /*onChange={this.updateDetails}*/ value={this.state.details.smallQuote} type="text" placeholder="Quote." />
+                            <FormControl onChange={this.updateDetails} value={this.state.details.smallQuote} type="text" placeholder="Quote." />
                         </Col>
                     </FormGroup>
 
