@@ -3,91 +3,138 @@
     background-color: #222;
 }
 
-.carousel .thumbnail image {
-    height: 500px !important;
-    width: auto;
+.FormCombo{
+    background-color: #222;
+    color: #2989bb;
+    border: none;
 }
 
-.carousel .slide image {
-    height: 500px !important;
-    width: auto;
+.nav {
+    background-color: #222;
+}
+
+.nav .navbar {
+    background-color: #222;
+}
+
+.navbar-default {
+    background-color: #222;
+    border: none !important;
+}
+
+
+a:link {
+    color: #777 !important;
+    border-bottom: none !important;
+    
+}
+a:visited {
+    color: #777 !important;
+    border-bottom: none !important;
+    
+}
+    a:hover {
+        color: #2989bb !important;
+        border-bottom: none !important;
+    }
+a:active {
+    color: #383838 !important;
+    border-bottom: none !important;
+    background-color: #e7e7e7 !important;
+}
+a:focus {
+    background-color: #e7e7e7 !important;
+}
+
+.nav a:link {
+    color: #777 !important;
+    border-bottom: none !important;
+}
+
+.nav a:visited {
+    color: #777 !important;
+    border-bottom: none !important;
+}
+
+.nav a:hover {
+    color: #2989bb !important;
+    border-bottom: none !important;
+}
+
+.nav a:active {
+    color: #383838 !important;
+    border-bottom: none !important;
+    background-color: #e7e7e7 !important;
+}
+
+.nav a:focus {
+    background-color: #e7e7e7 !important;
+}
+
+
+
+.carousel {
+    padding-top: 50px;
+    height: 100vh !important;
+    margin-top: -1.8vh !important;    
+}
+
+.carousel .carousel-inner {
+    height: 100%;
 
 }
+
+.carousel-indicators {
+    height: 25% !important;
+    
+}
+
 .carousel .image {
-    height: 500px !important;
-    width: auto;
+    height: 50vh !important;
+    
 }
 
 .carousel-caption {
     color: #2989bb;
-}
-.carousel-item {
-    width: auto;
+    padding-bottom: -10%;
+    
 }
 
+.carousel .item {
+    padding-bottom: 10%;
+    
+}
 
+.div {
+    background-color: #222 !important;
+    color: #2989bb !important;
+    
+}
 
 .panel-body {
-    background-color: #222;
-    color: #2989bb;
+    background-color: #222 !important;
+    color: #2989bb !important;
+    margin-top: -20px !important;
 }
-.panel {
-    background-color: #222;
-    color: #2989bb;
-}
+
 .panel-heading {
-    background-color: #222;
-    color: #2989bb;
+    background-color: #222 !important;
+    color: #2989bb !important;
+    border-color: #2989bb !important;
+    border-bottom: solid;
+    
 }
 
-.panel .body {
-    background-color: #222;
-    color: #2989bb;
+
+
+.list-group-item {
+    background-color: #222 !important;
+    border-bottom: solid;
+    border-color: #383838 !important;
 }
 
-.panel .heading {
-    background-color: #222;
-    color: #2989bb;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #222;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.form-horizontal {
-  width: 40% !important;
-  margin-left: 30%
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.RevForm {
+    align-content: center !important;
+    width: 40% !important;
+    margin-left: 27vw;
 }

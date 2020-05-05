@@ -1,39 +1,38 @@
 import React, { Component } from 'react';
-import { fetchMovies } from '../actions/movieActions';
+import { fetchTopMovies } from '../actions/movieActions';
 import { setMovie } from '../actions/movieActions';
-import {connect} from "react-redux";
+import { connect } from "react-redux";
 import { Image } from 'react-bootstrap'
 import { Carousel } from 'react-bootstrap'
 import { Glyphicon } from 'react-bootstrap'
-import {LinkContainer} from 'react-router-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 
-//require a callback function to be sent to MovieList to update the header subtitle
 
-class MovieList extends Component {
+class MovieHome extends Component {
     constructor(props) {
         super(props);
         this.handleSelect = this.handleSelect.bind(this);
     }
 
     componentDidMount() {
-        const {dispatch} = this.props;
-        dispatch(fetchMovies());
+        const { dispatch } = this.props;
+        dispatch(fetchTopMovies());
     }
 
     handleSelect(selectedIndex, e) {
-        const {dispatch} = this.props;
+        const { dispatch } = this.props;
         dispatch(setMovie(this.props.movies[selectedIndex]));
     }
 
     handleClick = (movie) => {
-        const {dispatch} = this.props;
+        const { dispatch } = this.props;
         dispatch(setMovie(movie));
     }
 
     render() {
 
-        const MovieListCarousel= ({movieList}) => {
-            if (!movieList) { // evaluates to true if currentMovie is null
+        const MovieHomeCarousel = ({ movieHome }) => {
+            if (!movieHome) { // evaluates to true if currentMovie is null
                 return (
                     <div>Loading...</div>
                 );
@@ -41,10 +40,10 @@ class MovieList extends Component {
 
             return (
                 <Carousel onSelect={this.handleSelect}>
-                    {movieList.map((movie) =>
+                    {movieHome.map((movie) =>
                         <Carousel.Item key={movie._Title}>
                             <div>
-                                <LinkContainer to={'/movie/'+movie._id} onClick={()=>this.handleClick(movie)}>
+                                <LinkContainer to={'/movie/' + movie._id} onClick={() => this.handleClick(movie)}>
                                     <Image className="image" src={movie.imageURL} thumbnail />
                                 </LinkContainer>
                             </div>
@@ -57,7 +56,7 @@ class MovieList extends Component {
         }
 
         return (
-            <MovieListCarousel movieList={this.props.movies} />
+            <MovieHomeCarousel movieHome={this.props.movies} />
         );
     }
 }
@@ -68,4 +67,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(MovieList);
+export default connect(mapStateToProps)(MovieHome);

@@ -52,10 +52,35 @@ export function fetchMovies(){
     }
 }
 
+export function fetchTopMovies() {
+    const env = runtimeEnv();
+    return dispatch => {
+        return fetch(`${env.REACT_APP_API_URL}/?reviews=true`, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem('token')
+            },
+            mode: 'cors'
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+                return response.json();
+            })
+            .then((res) => {
+                dispatch(moviesFetched(res));
+            })
+            .catch((e) => console.log(e));
+    }
+}
+
 export function fetchMovie(title){
     const env = runtimeEnv();
     return dispatch => {
-        return fetch(`${env.REACT_APP_API_URL}/reviews/${title}?reviews=true`, {
+        return fetch(`${env.REACT_APP_API_URL}/movie/${title}?reviews=true`, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -76,10 +101,12 @@ export function fetchMovie(title){
     }
 }
 
-export function submitReview(title, data) {
+export function submitReview(movieId, data) {
     const env = runtimeEnv();
     return dispatch => {
-        return fetch(`${env.REACT_APP_API_URL}/reviews/${title}`, {
+        //alert(JSON.stringify(data));
+        //alert(movieId);
+        return fetch(`${env.REACT_APP_API_URL}/reviews`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -90,12 +117,13 @@ export function submitReview(title, data) {
             mode: 'cors'})
             .then((response) => {
                 if (!response.ok) {
+                    //alert(response.statusText);
                     throw Error(response.statusText);
                 }
                 return response.json();
             })
             .then((res) => {
-                dispatch(fetchMovie(title));
+                dispatch(fetchMovie(movieId));
             })
             .catch((e) => console.log(e));
     }

@@ -17,7 +17,7 @@ class Movie extends Component {
     //    this.review = this.review.bind(this);
     //    this.state = {
     //        details: {
-    //            username: '',
+    //            Reviewername: '',
     //            smallQuote: '',
     //            rating: ''
     //        }
@@ -31,31 +31,48 @@ class Movie extends Component {
     //        details: updateDetails
     //    });
     //}
-    
+
 
     constructor(props) {
         super(props);
-        this.state = { smallQuote: '' };
+        this.state = {
+            details: {
+                smallQuote: '',
+                rating: '',
+                id: ''
+            }
+        };
         this.handleChange = this.handleChange.bind(this);
-        //this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChange(event) {
-        this.setState({ smallQuote: event.target.value });
+        let handleChange = Object.assign({}, this.state.details);
+
+        handleChange[event.target.id] = event.target.value;
+        this.setState({
+            details: handleChange
+        });
     }
 
-    //handleSubmit(event) {
-    //    alert('a name is submitted: ' + this.state.value);
-    //    event.preventDefault();
-    //}
+    handleSubmit(event) {
 
-    review() {
+        this.state.details.id = this.props.selectedMovie.movieId;
         const { dispatch } = this.props;
-        dispatch(submitReview(this.state.details))
+        dispatch(submitReview(this.props.selectedMovie.movieId, this.state.details))
             .then(() => {
                 this.props.history.push('/');
             });
+        event.preventDefault();
     }
+
+    //review() {
+    //    const { dispatch } = this.props;
+    //    dispatch(submitReview(this.state.details))
+    //        .then(() => {
+    //            this.props.history.push('/');
+    //        });
+    //}
 
     componentDidMount() {
         const { dispatch } = this.props;
@@ -63,69 +80,98 @@ class Movie extends Component {
             dispatch(fetchMovie(this.props.movieId));
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        return false;
-    }
-
     render() {
         const ActorInfo = ({ actors = [] }) => {
             return actors.map((actor, i) =>
                 <p key={i}>
-                    <b>{actor.Name}</b> - {actor.Character}
+                    <b>{actor.Name}</b>   <Glyphicon glyph={'user'} />    {actor.Character}
                 </p>
             );
         };
 
+  
         const ReviewInfo = ({ reviews = [] }) => {
             return reviews.map((review, i) =>
                 <p key={i}>
-                    <b>{review.ReviewerName}</b> {review.smallQuote}
-                    <Glyphicon glyph={'star'} /> {review.rating}
+                    <b>{review.ReviewerName}</b> <Glyphicon glyph={'option-horizontal'} /> {review.smallQuote} <Glyphicon glyph={'option-horizontal'} />     <Glyphicon glyph={'star'} /> {review.rating}
                 </p>
             );
         }
 
-        const MovieReview = ({ currentReview }) => {
-            const form = (
-                <Form horizontal key={currentReview} >
-                     
-                    <FormGroup controlId="smallQuote">
-                        <Col componentClass={ControlLabel} sm={2}>
-                            Summary Quote:
-                        </Col>
-                        <Col sm={10}>
-                            <FormControl onChange={this.handleChange} value={this.state.smallQuote} type="text" placeholder="Quote." />
-                        </Col>
-                    </FormGroup>
-                </Form>
-            )
-            return form;
-        }
 
 
         const DetailInfo = ({ currentMovie = [] }) => {
+
             if (!currentMovie) { // evaluates to true if currentMovie is null
                 return <div>Loading...</div>;
             }
+            //const reviewAvg = function (avg) {
+            //    var sum = 0;
+            //    var i = 0;
+            //    let numbers = currentMovie.Reviews.rating;
+            //    for (i = 0; i < numbers; i++) {
+            //        sum += numbers[i];
+            //    }
+            //    avg = (sum / numbers.length);
+            //    return avg;
+            //}
+
+            //var reviewAgg = reviewAvg;
+
             return (
+
                 <Panel>
                     <Panel.Heading>Movie Details</Panel.Heading>
-                    <Panel.Body><Image className="image" src={currentMovie.imgURL} style={{ "height": 500 }} thumbnail /></Panel.Body>
-                    <ListGroup>
-                        <ListGroupItem>{currentMovie.Title}</ListGroupItem>
-                        <ListGroupItem><ActorInfo actors={currentMovie.Actors} /></ListGroupItem>
-                        <ListGroupItem><h4><Glyphicon glyph={'star'} /> {currentMovie.avgRating} </h4></ListGroupItem>
-                    </ListGroup>
+                    <Panel.Body><Image className="image" src={currentMovie.imageURL} style={{ "height": 300 }} thumbnail /></Panel.Body>
+                    <div className="ActAndRate">
+                        
+                        <ListGroup>
+                            <ListGroupItem>{currentMovie.Title}</ListGroupItem>
+                            <ListGroupItem><ActorInfo actors={currentMovie.Actors} /></ListGroupItem>
+                            <ListGroupItem><h4><Glyphicon glyph={'star'} /> {currentMovie.avgRating} </h4></ListGroupItem>
+                        </ListGroup>
+                    </div>
                     <Panel.Body><ReviewInfo reviews={currentMovie.Reviews} /></Panel.Body>
                     <ListGroup>
-                        <ListGroupItem key={currentMovie.Title}><MovieReview currentReview={currentMovie.Title} /></ListGroupItem>
+
                     </ListGroup>
                 </Panel>
 
             );
         };
+
         return (
-            <DetailInfo currentMovie={this.props.selectedMovie} />
+
+            <div className="FormCombo" >
+                <DetailInfo currentMovie={this.props.selectedMovie} />
+                <Form horizontal>
+                    <div className="RevForm">
+                        <FormGroup controlId="smallQuote">
+                            <Col componentClass={ControlLabel} sm={2}>
+                                Reviewer Quote:
+                        </Col>
+                            <Col sm={10}>
+                                <FormControl onChange={this.handleChange} value={this.state.details.smallQuote} type="text" placeholder="Review text" />
+                            </Col>
+                        </FormGroup>
+
+                        <FormGroup controlId="rating">
+                            <Col componentClass={ControlLabel} sm={2}>
+                                Rating:
+                        </Col>
+                            <Col sm={10}>
+                                <FormControl onChange={this.handleChange} value={this.state.details.rating} type="number" min="0" max="5" placeholder="Rating 1 to 5" />
+                            </Col>
+                        </FormGroup>
+
+                        <FormGroup>
+                            <Col smOffset={2} sm={10}>
+                                <Button onClick={this.handleSubmit}>Submit</Button>
+                            </Col>
+                        </FormGroup>
+                    </div>
+                </Form>
+            </div>
         );
     }
 
