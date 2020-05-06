@@ -30,7 +30,6 @@ class MovieHome extends Component {
     }
 
     render() {
-
         const MovieHomeCarousel = ({ movieHome }) => {
             if (!movieHome) { // evaluates to true if currentMovie is null
                 return (

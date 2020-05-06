@@ -7,7 +7,6 @@ class Register extends Component {
 
     constructor(){
         super();
-
         this.updateDetails = this.updateDetails.bind(this);
         this.register = this.register.bind(this);
         this.state = {
@@ -21,7 +20,6 @@ class Register extends Component {
 
     updateDetails(event){
         let updateDetails = Object.assign({}, this.state.details);
-
         updateDetails[event.target.id] = event.target.value;
         this.setState({
             details: updateDetails
@@ -44,25 +42,22 @@ class Register extends Component {
                         <FormControl onChange={this.updateDetails} value={this.state.details.name} type="name" placeholder="Name" />
                     </Col>
                 </FormGroup>
-
                 <FormGroup controlId="username">
                     <Col componentClass={ControlLabel} sm={2}>
-                        Username
+                        Username: 
                     </Col>
                     <Col sm={10}>
                         <FormControl onChange={this.updateDetails} value={this.state.details.username} type="username" placeholder="Username" />
                     </Col>
                 </FormGroup>
-
                 <FormGroup controlId="password">
                     <Col componentClass={ControlLabel} sm={2}>
-                        Password
+                        Password: 
                     </Col>
                     <Col sm={10}>
                         <FormControl onChange={this.updateDetails} value={this.state.details.password} type="password" placeholder="Password" />
                     </Col>
                 </FormGroup>
-
                 <FormGroup>
                     <Col smOffset={2} sm={10}>
                         <Button onClick={this.register}>Register</Button>

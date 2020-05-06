@@ -26,22 +26,22 @@ class MovieHeader extends Component {
                             <NavItem eventKey={3} disabled={!this.props.loggedIn}>Movie Detail</NavItem>
                         </LinkContainer>
                         <LinkContainer to="/signin">
+                            <NavItem eventKey={5}>
                                 {
                                     this.props.loggedIn ?
                                     <NavItem eventKey={4} onClick={this.logout.bind(this)}>Logout</NavItem> : 'Login'
                                 }
-                            
+                            </NavItem>
                         </LinkContainer>
                     </Nav>
                 </Navbar>
-                <header className="App-header">
-                    <h1 className="App-title">{(this.props.selectedMovie ? this.props.selectedMovie.Title : '')}</h1>
-                </header>
             </div>
 
         );
     }
 }
+
+// <h1 className="App-title">{(this.props.selectedMovie ? this.props.selectedMovie.Title : '')}</h1>
 
 const mapStateToProps = state => {
     return {

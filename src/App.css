@@ -43,7 +43,7 @@ a:active {
     background-color: #e7e7e7 !important;
 }
 a:focus {
-    background-color: #e7e7e7 !important;
+    background-color: transparent !important;
 }
 
 .nav a:link {
@@ -133,8 +133,8 @@ a:focus {
     border-color: #383838 !important;
 }
 
-.RevForm {
-    align-content: center !important;
-    width: 40% !important;
-    margin-left: 27vw;
+
+.center {
+    margin: auto;
+    width: 50vw;
 }
